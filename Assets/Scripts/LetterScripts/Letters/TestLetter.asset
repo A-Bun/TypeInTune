@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 145d29ae082963a49a2904175e3a747b, type: 3}
-  m_Name: Test
+  m_Name: TestLetter
   m_EditorClassIdentifier: 
   title: TestLetter
   sentences:
@@ -20,3 +20,5 @@ MonoBehaviour:
   completedSentences: 000000
   isComplete: 0
   paper: {fileID: 0}
+  song: {fileID: 11400000, guid: 5abd63391162432418ccf38dec3f5f66, type: 2}
+  interval: 90

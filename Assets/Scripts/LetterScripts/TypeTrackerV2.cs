@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TypeTrackerV2 : MonoBehaviour
 {
-    public Text originalLetter = null;
+    public TextMeshProUGUI originalLetter = null;
     public Image wrong;
     public bool pause;
+    public int numMistakes;
     
     public LetterInteract letIn;
     private List<string> remainingWords = new List<string>();
@@ -23,7 +25,8 @@ public class TypeTrackerV2 : MonoBehaviour
         wrong.gameObject.SetActive(false);
         sentenceIndex = 0;
         charIndex = 0;
-        originalLetter.supportRichText = true;
+        numMistakes = 0;
+        originalLetter.richText = true;
         fullLetter = letIn.letter.sentences;
         SetCurrentWords();
     }
@@ -158,6 +161,7 @@ public class TypeTrackerV2 : MonoBehaviour
         {
             status = false;
             wrong.gameObject.SetActive(true);
+            numMistakes++;
         }
 
         return status;

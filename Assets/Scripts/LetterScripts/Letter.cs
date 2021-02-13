@@ -11,6 +11,8 @@ public class Letter : ScriptableObject
     public List<bool> completedSentences = new List<bool>();
     public bool isComplete;
     public Sprite paper;
+    public Song song;
+    public int interval;
 
     //public void ResetLetter()
     //{
