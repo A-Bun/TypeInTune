@@ -1,0 +1,19 @@
+﻿2021-02-23        Alexis Peoples        <alexisp30ples@gmail.com>
+
+
+* I created and pushed the PROGRESSLOG, TODO, and README files to the repository.
+* Overall explanation of what’s been done so far:
+   * I have made a Letter object, a Song object, and their respective handlers. The handlers have functions that return the title/name, the (in)complete status, etc.
+   * A letter (all of the sentences) can appear and as you type the characters out correctly, they turn from black to green.
+   * A song can be attached to each letter.
+   * Each letter can be given its own paper sprite (which changes the appearance of the paper that the sentences appear on).
+   * When a sentence is completed (sentence is a misnomer because in the letters, a sentence is actually a sentence fragment), the letter’s connected song plays for a predetermined amount of time. You can’t continue typing until the song pauses again. Every time a sentence is completed, the song plays from the time it last stopped at.
+   * If you mistype a character in the letter, a “WRONG!” image appears on screen and doesn’t go away until you type the correct character and the number of mistakes you made in the letter is incremented.
+   * Each song can be given a cost (the price to buy it from the shop). Each song has a salary (the amount of money to be paid to you when you play the song). The salary of each song can be incrementally decreased based on a predetermined number of mistakes.
+   * The more mistakes you make when typing the letter, the less money you get for playing the connected song.
+   * Once the letter is set to complete (meaning all sentences have been typed/completed), the song plays from its current position until it ends.
+   * The early layout and basic functionality of the “sitting at the piano” scene is done.
+   * Part of the script for the intro and the tutorial is written.
+   * Part of the art for the intro scene is completed.
+   * Multiple purchasable cosmetics are completed (ex. different themed piano keys).
+   * A few other things I can’t fit here.

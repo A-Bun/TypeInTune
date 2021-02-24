@@ -1,0 +1,7 @@
+﻿Timeline for the Future:
+* Add royalty-free piano music to the song collection.
+* Add my own piano music to the song collection. (optional)
+* Finish drawing the intro scene background art.
+* Create dialogue box and art for the boss.
+* Create main menu.
+* Research more for report.
