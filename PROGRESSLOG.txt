@@ -1,4 +1,13 @@
-﻿2021-02-23        Alexis Peoples        <alexisp30ples@gmail.com>
+﻿2021-02-26        Alexis Peoples        <alexisp30ples@gmail.com>
+
+
+* When pressed, the songbook button now pulls up an expanded image of the songbook, which displays each song the player currently has unlocked as well as each song's info.
+* The songbook can play, pause, stop, and restart each song within it.
+* When a letter is being typed, all characters that have already been typed are displayed in green, the next character to be typed is displayed in red, and all other characters not yet typed are displayed in black.
+
+
+
+2021-02-23        Alexis Peoples        <alexisp30ples@gmail.com>
 
 
 * I created and pushed the PROGRESSLOG, TODO, and README files to the repository.
