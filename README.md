@@ -39,6 +39,8 @@
 		Here's the video: https://www.youtube.com/watch?v=hXU-ZJb6GHw&ab_channel=Rabidgremlin
 	2) As always thanks to Brackeys on Youtube for the helpful tutorials and
 		scripts.
+	3) Thanks to https://freemusicarchive.org for some of the piano music I used for the game.
+		Link to the license: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
 
 # Changelog
 	*I don't know what this means yet.*

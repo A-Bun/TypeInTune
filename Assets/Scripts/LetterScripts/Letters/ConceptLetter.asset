@@ -16,9 +16,11 @@ MonoBehaviour:
   sentences:
   - 'Dear friend, '
   - 'I hope you are well. '
-  - 'It has been some time since we last talked, but I just wanted to let you know
-    that I miss you. '
+  - 'It has been some time since we last talked, '
+  - 'but I just wanted to let you know that I miss you. '
   - I haven't forgotten about you, don't worry haha.
-  completedSentences: 00000000
+  completedSentences: 0000000000
   isComplete: 0
   paper: {fileID: 0}
+  song: {fileID: 11400000, guid: 98c96fece3dd4764a8d6285d5a7607f2, type: 2}
+  interval: 12

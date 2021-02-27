@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SongInteract : MonoBehaviour
 {
     private Song song;
     private AudioSource audioS;
-    public float currTime;
-    public int salary;
+    private float currTime, interval;
+    private int salary, index, currMins, currSecs, ten, sixty;
     private TypeTrackerV2 ttv2;
-    private int index;
-    private float interval;
+    private bool waitToEnd;
+    public GameObject blocker, songInfo, errorInfo;
+    private TextMeshProUGUI tempText;
 
     // Start is called before the first frame update
     void Start()
     {
+        blocker.SetActive(true);
         ttv2 = gameObject.GetComponent<TypeTrackerV2>();
         song = ttv2.letIn.letter.song;
         audioS = GetComponent<AudioSource>();
@@ -25,6 +28,14 @@ public class SongInteract : MonoBehaviour
         currTime = 0;
         index = 0;
         interval = (song.songDuration / ttv2.letIn.letter.interval);
+        waitToEnd = false;
+        ten = 10;
+        sixty = 60;
+        songInfo.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = song.songTitle;
+        tempText = songInfo.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        songInfo.SetActive(true);
+        errorInfo.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -32,6 +43,12 @@ public class SongInteract : MonoBehaviour
     {
         UpdateSalary();
         PlayOrPause();
+        SetSongbook();
+
+        if (waitToEnd)
+        {
+            EndSong();
+        }
     }
 
     public int NumMistakes()
@@ -68,6 +85,7 @@ public class SongInteract : MonoBehaviour
         else
         {
             PauseClip(true);
+            waitToEnd = true;
         }
     }
 
@@ -105,5 +123,39 @@ public class SongInteract : MonoBehaviour
     public void SaveCurrTime()
     {
         currTime = audioS.time;
+    }
+
+    public void EndSong()
+    {
+        if (audioS.time == audioS.clip.length)
+        {
+            song.timesPlayed += 1;
+            song.totalMistakes += NumMistakes();
+            song.totalMoney += salary;
+            
+            blocker.SetActive(false);
+            songInfo.SetActive(false);
+            errorInfo.SetActive(false);
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void SetSongbook()
+    {
+        string totalTime;
+
+        totalTime = song.DetailedDuration();
+        errorInfo.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = NumMistakes().ToString();
+        currMins = (int)(audioS.time / sixty);
+        currSecs = (int)(audioS.time - (currMins * sixty));
+
+        if (currSecs < ten)
+        {
+            tempText.text = currMins + ":0" + currSecs + "/" + totalTime;
+        }
+        else
+        {
+            tempText.text = currMins + ":" + currSecs + "/" + totalTime;
+        }
     }
 }

@@ -72,6 +72,7 @@ public class TypeTrackerV2 : MonoBehaviour
     {
         List<string> tempStr = fullLetter;
         int tempIndex = charIndex;
+        bool ignore = false;
 
         if (IsCorrectChar(typedChar))
         {
@@ -79,6 +80,8 @@ public class TypeTrackerV2 : MonoBehaviour
 
             if (sentenceIndex == 0 && charIndex == 0)
             {
+                originalLetter.text = originalLetter.text + "<color=red>" + tempStr[0][1] + "</color>";
+
                 for (int i = sentenceIndex; i < tempStr.Count; i++)
                 {
                     if (i > 0)
@@ -87,8 +90,10 @@ public class TypeTrackerV2 : MonoBehaviour
                     }
                     for (int j = 1; j < tempStr[i].Length; j++)
                     {
-                        originalLetter.text = originalLetter.text + tempStr[i][j];
-
+                        if (!(i == 0 && j == 1))
+                        {
+                            originalLetter.text = originalLetter.text + tempStr[i][j];
+                        }
                     }
 
                 }
@@ -116,11 +121,30 @@ public class TypeTrackerV2 : MonoBehaviour
                         }
                     }
                 }
+
+                if (tempIndex + 1 != tempStr[sentenceIndex].Length)
+                {
+                    originalLetter.text = originalLetter.text + "<color=red>" + tempStr[sentenceIndex][tempIndex + 1] + "</color>";
+                }
+                else if(sentenceIndex+1 != fullLetter.Count)
+                {
+                    originalLetter.text = originalLetter.text + "<color=red>" + tempStr[sentenceIndex+1][0] + "</color>";
+                    ignore = true;
+                }
+
                 for (int i = sentenceIndex; i < tempStr.Count; i++)
                 {
                     for (int j = tempIndex + 1; j < tempStr[i].Length; j++)
                     {
-                        originalLetter.text = originalLetter.text + tempStr[i][j];
+                        if(ignore)
+                        {
+                            ignore = false;
+                            continue;
+                        }
+                        else if (!(i == sentenceIndex && j == tempIndex + 1))
+                        {
+                            originalLetter.text = originalLetter.text + tempStr[i][j];
+                        }
                     }
 
                     tempIndex = -1;
