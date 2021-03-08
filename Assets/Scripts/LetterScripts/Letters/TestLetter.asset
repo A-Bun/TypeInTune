@@ -17,8 +17,8 @@ MonoBehaviour:
   - 'Test. '
   - 'New test. '
   - Yes.
-  completedSentences: 010101
-  isComplete: 1
+  completedSentences: 000000
+  isComplete: 0
   paper: {fileID: 0}
   song: {fileID: 11400000, guid: 5abd63391162432418ccf38dec3f5f66, type: 2}
   interval: 90

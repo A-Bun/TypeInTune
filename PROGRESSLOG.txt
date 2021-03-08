@@ -1,4 +1,12 @@
-﻿2021-02-26        Alexis Peoples        <alexisp30ples@gmail.com>
+﻿2021-03-03		Alexis Peoples		<alexisp30ples@gmail.com>
+* The songbook's play, pause, stop, and restart buttons now have images signifying which is which.
+* The shop layout has been established in game, however, it doesn't have full functionality yet.
+* The Player object was created to hold information about the player, which is only the current amount of money so far.
+* The player's current amount of money can be incremented, decremented, and outputted.
+* The songs in the shop can be "bought," (meaning a debug message pops up) and the player's money will be updated.
+* The songbook has been updated to only show songs that the player owns (excludes the ones not yet bought from the shop).
+
+2021-02-26		Alexis Peoples		<alexisp30ples@gmail.com>
 
 
 * When pressed, the songbook button now pulls up an expanded image of the songbook, which displays each song the player currently has unlocked as well as each song's info.
@@ -7,7 +15,7 @@
 
 
 
-2021-02-23        Alexis Peoples        <alexisp30ples@gmail.com>
+2021-02-23		Alexis Peoples		<alexisp30ples@gmail.com>
 
 
 * I created and pushed the PROGRESSLOG, TODO, and README files to the repository.

@@ -22,4 +22,4 @@ MonoBehaviour:
   totalMoney: 0
   songSalary: f401000064000000
   salaryMarks: 0000000001000000
-  status: 0
+  status: 1

@@ -8,7 +8,8 @@ public class Songbook : MonoBehaviour
 {
     public Button prevSong, nextSong;
     public TextMeshProUGUI title, artist, times, money, mistakes, duration;
-    private Song[] songs;
+    private List<Song> allSongs = new List<Song>();
+    private List<Song> ownedSongs = new List<Song>();
     private Song currSong;
     private int index;
     private AudioSource audioS;
@@ -16,18 +17,38 @@ public class Songbook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        songs = Resources.LoadAll<Song>("Songs");
+        allSongs.AddRange(Resources.LoadAll<Song>("Songs"));
+        HideUnowned();
         index = 0;
         audioS = gameObject.GetComponent<AudioSource>();
-        currSong = songs[index];
+        currSong = ownedSongs[index];
         audioS.clip = currSong.songAudio;
         SetSongInfo();
 
         prevSong.gameObject.SetActive(false);
 
-        if (songs.Length == 1)
+        if (ownedSongs.Count == 1)
         {
             nextSong.gameObject.SetActive(false);
+        }
+    }
+
+    private void HideUnowned()
+    {
+        for(int i = 0; i < allSongs.Count; i++)
+        {
+            if(allSongs[i].status)
+            {
+                ownedSongs.Add(allSongs[i]);
+            }
+        }
+    }
+
+    public void AddSong(Song newSong)
+    {
+        if (newSong.status)
+        {
+            ownedSongs.Add(newSong);
         }
     }
 
@@ -46,12 +67,12 @@ public class Songbook : MonoBehaviour
     public void GoToNextSong()
     {
         index++;
-        currSong = songs[index];
+        currSong = ownedSongs[index];
         prevSong.gameObject.SetActive(true);
 
         SetSongInfo();
 
-        if (index >= (songs.Length-1))
+        if (index >= (ownedSongs.Count-1))
         {
             nextSong.gameObject.SetActive(false);
         }
@@ -64,7 +85,7 @@ public class Songbook : MonoBehaviour
     public void GoToPrevSong()
     {
         index--;
-        currSong = songs[index];
+        currSong = ownedSongs[index];
         nextSong.gameObject.SetActive(true);
 
         SetSongInfo();
@@ -119,7 +140,7 @@ public class Songbook : MonoBehaviour
     public void CloseSongbook()
     {
         index = 0;
-        currSong = songs[index];
+        currSong = ownedSongs[index];
         SetSongInfo();
         audioS.Stop();
         prevSong.gameObject.SetActive(false);
