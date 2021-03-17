@@ -1,4 +1,11 @@
-﻿2021-03-03		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-03-16		Alexis Peoples		<alexisp30ples@gmail.com>
+* Wrote most/all of the letters out for the story.
+* Completed more of the bar background art.
+* Added the (unfinished) scene transition to the game.
+Note: Not much was updated this week due to the 4 exams, 1 project, and 2 papers I had to do.
+	  I'll do much more in the next progress report.
+
+2021-03-03		Alexis Peoples		<alexisp30ples@gmail.com>
 * The songbook's play, pause, stop, and restart buttons now have images signifying which is which.
 * The shop layout has been established in game, however, it doesn't have full functionality yet.
 * The Player object was created to hold information about the player, which is only the current amount of money so far.
