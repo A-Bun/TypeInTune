@@ -7,11 +7,16 @@ public class ChangeScene : MonoBehaviour
 {
     public void PianoScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(2);
     }
-    
+
+    public void BarScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void MenuScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
     }
 }

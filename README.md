@@ -41,6 +41,8 @@
 		scripts.
 	3) Thanks to https://freemusicarchive.org for some of the piano music I used for the game.
 		Link to the license: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+	4) Thanks to Kyle Suchar on Youtube for showing me how to do 2D player movement. Here's the
+		video: https://www.youtube.com/watch?v=L6Q6VHueWnU&ab_channel=KyleSuchar
 
 # Changelog
 	*I don't know what this means yet.*

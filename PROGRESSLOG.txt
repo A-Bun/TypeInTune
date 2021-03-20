@@ -1,4 +1,16 @@
-﻿2021-03-16		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-03-20		Alexis Peoples		<alexisp30ples@gmail.com>
+* The intro to the game is complete (except the image for the boss isn't in yet). The intro includes:
+	* Opening dialogue with the boss on a black screen; when the dialogue ends, the boss fades away.
+	* After the complete black screen, a flickering light animation plays, which unviels the bar for the first time.
+	* After the bar is visible for a few seconds, the boss appears again and completes his intro dialogue.
+
+2021-03-17		Alexis Peoples		<alexisp30ples@gmail.com>
+* Implemented fade in/out for scenes.
+* Added Bar scene (skeleton).
+* Added dialogue system (skeleton).
+* Added player movement and collision for bar scene (skeleton).
+
+2021-03-16		Alexis Peoples		<alexisp30ples@gmail.com>
 * Wrote most/all of the letters out for the story.
 * Completed more of the bar background art.
 * Added the (unfinished) scene transition to the game.

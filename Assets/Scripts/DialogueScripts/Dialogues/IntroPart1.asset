@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: IntroPart1
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - Hey kid. Not an early bird, eh?
+  - "Well, don\u2019t worry about it; ya normally won\u2019t be here \u2018til the
+    evenin\u2019."
+  - I just wanted ya to come in early on ya first day, so ya can learn the ropes.
+  - "Yeah, I know ya good at playin\u2019 the piano, but that\u2019s not the only
+    rope kid."
+  - "Enough yappin\u2019. Ya got a lot to learn, so let\u2019s get to business."
+  - Welcome to <bar name>!
+  isComplete: 0
