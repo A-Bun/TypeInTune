@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
     private bool isTextBox;
+    private string prevSentence;
     public Dialogue currDialogue;
     public TextMeshProUGUI dialogueText;
     public Image textBox;
@@ -22,6 +23,8 @@ public class DialogueManager : MonoBehaviour
             textBox.gameObject.SetActive(false);
             isTextBox = true;
         }
+
+        prevSentence = dialogueText.text;
     }
 
     // Update is called once per frame
@@ -52,21 +55,29 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         string sentence;
-
-        if (sentences.Count == 0)
+        if (dialogueText.text != prevSentence)
         {
-            EndDialogue();
-            return;
+            StopAllCoroutines();
+            dialogueText.text = prevSentence;
         }
+        else
+        {
+            if (sentences.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
 
-        sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+            sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        }
     }
 
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
+        prevSentence = sentence;
 
         for (int i = 0; i < sentence.Length; i++)
         {

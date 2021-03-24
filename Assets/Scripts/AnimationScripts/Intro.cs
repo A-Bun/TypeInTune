@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Intro : MonoBehaviour
 {
-    public GameObject flicker;
+    public GameObject flicker, fader;
     public void OnFadeOutComplete()
     {
         Color color;
@@ -20,5 +20,6 @@ public class Intro : MonoBehaviour
     public void OnFadeEndComplete()
     {
         gameObject.SetActive(false);
+        fader.GetComponent<Fader>().FadeToNextLevel();
     }
 }

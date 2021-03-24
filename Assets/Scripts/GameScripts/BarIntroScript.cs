@@ -5,19 +5,27 @@ using UnityEngine.UI;
 
 public class BarIntroScript : MonoBehaviour
 {
-    public Image boss;
     public DialogueManager manager;
     public Dialogue introDialogue1, introDialogue2;
     public GameObject intro, textBox;
+    public Player player;
     public Animator animator;
     public bool second;
-    private bool triggered, started, done;
+    private bool triggered, done;
 
     // Start is called before the first frame update
     void Start()
     {
-        boss.gameObject.SetActive(true);
-        StartCoroutine(WaitForDialogue(introDialogue1));
+        if (player.introCompleted)
+        {
+            intro.SetActive(false);
+            gameObject.GetComponent<BarIntroScript>().enabled = false;
+        }
+        else
+        {
+            intro.SetActive(true);
+            StartCoroutine(WaitForDialogue(introDialogue1));
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +45,7 @@ public class BarIntroScript : MonoBehaviour
         else if (introDialogue2.isComplete)
         {
             animator.SetTrigger("FadeEnd");
+            player.introCompleted = true;
         }
     }
 

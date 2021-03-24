@@ -3,6 +3,9 @@
 	* Opening dialogue with the boss on a black screen; when the dialogue ends, the boss fades away.
 	* After the complete black screen, a flickering light animation plays, which unviels the bar for the first time.
 	* After the bar is visible for a few seconds, the boss appears again and completes his intro dialogue.
+	* Once the boss is finished his dialogue, the scene changes to the "at piano" scene (where the tutorial will start).
+* Added some of the tutorial dialogue to the game.
+* If the next sentence button is pressed before the dialogue is finished animating, the full sentence is displayed and the player must press the next button again to go to the next sentence.
 
 2021-03-17		Alexis Peoples		<alexisp30ples@gmail.com>
 * Implemented fade in/out for scenes.
