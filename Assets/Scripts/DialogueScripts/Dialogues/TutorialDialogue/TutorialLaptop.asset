@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
-  m_Name: TutorialShopP2
+  m_Name: TutorialLaptop
   m_EditorClassIdentifier: 
   speakerName: Boss
   sentences:
-  - In the top left is your current amount of money; the goods ain't free so you
-    need to save up to get what you want.
-  - 'Well, would you look at that: a free song!'
-  - That don't happen too often (makin' me look dumb, eh), so snatch it up while
-    you can by pressing that buy button.
+  - "Now, let\u2019s do a practice run of a regular day so that you know what to
+    expect."
+  - When you're ready to start working, turn on the laptop by left-clicking on it.
   isComplete: 0

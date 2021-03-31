@@ -16,8 +16,9 @@ MonoBehaviour:
   sentences:
   - "The left page shows the song\u2019s title and artist."
   - The right page shows how many times you've played the song, how much money you've
-    made from playing the song,
-  - "how many mistakes you've made when playing the song, and the song\u2019s duration."
+    made from playing the song, ...
+  - "... how many mistakes you've made when playing the song, and the song\u2019s
+    duration."
   - Use the buttons at the bottom of each page to look through the different songs
     you have unlocked.
   - Also, you can use these buttons to listen to the current song you're viewing.

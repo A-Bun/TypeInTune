@@ -1,9 +1,16 @@
-﻿2021-03-29		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-03-30		Alexis Peoples		<alexisp30ples@gmail.com>
+* 3/4 of the tutorial is now complete.
+	* Now, the songbook part and the shop part of the tutorial are done.
+	* All that's left to connect to the tutorial is the explanation of the letter typing.
+* The boss art is coming together nicely so far. I'm not the best artist, so it is challenging but also worth it.
+
+2021-03-29		Alexis Peoples		<alexisp30ples@gmail.com>
 * The tutorial is halfway complete.
 	* If the tutorial was not played when the "at piano" scene starts, the tutorial begins.
 	* The boss' dialogue appears and red boxes appear around what the player should click on next as he talks.
 	* Red boxes appear around some objects (that the player should pay attention to) that the boss refers to in his dialogue.
 	* Buttons that shouldn't be pressed during certain times in the tutorial are disabled.
+	* So far only the songbook part of the tutorial is done.
 
 2021-03-20		Alexis Peoples		<alexisp30ples@gmail.com>
 * The intro to the game is complete (except the image for the boss isn't in yet). The intro includes:
