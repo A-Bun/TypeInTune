@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
-  m_Name: TutorialSongbook
+  m_Name: TutorialSBP1
   m_EditorClassIdentifier: 
   speakerName: Boss
   sentences:
-  - Well, here she is. I even made space for ya laptop like ya asked.
+  - Well, here she is. I even made space for your laptop like you asked.
   - "Ain\u2019t I the greatest boss eva\u2019? Don\u2019t answer that yet\u2026"
-  - "Anyway, let\u2019s look at the layout of ya workspace. The songbook in front
-    of ya is the song collection."
-  - Before the day starts, ya can click on it to see stats about the songs ya have
+  - "Anyway, let\u2019s look at the layout of your workspace. The songbook in front
+    of you is the song collection."
+  - Before the day starts, you can click on it to see stats about the songs you have
     unlocked.
-  - When ya playing a song, its title, its timestamp, and the number of mistakes
-    ya made during it so far will appear there on the pages.
+  - When you're playing a song, its title, its timestamp, and the number of mistakes
+    you made during it so far will appear there on the pages.
   - I'll go into more detail about that part later.
   - "For now, why don\u2019t you see what the songbook has right now?"
-  isComplete: 1
+  isComplete: 0

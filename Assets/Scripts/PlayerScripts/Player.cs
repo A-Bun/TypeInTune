@@ -6,5 +6,5 @@ using UnityEngine;
 public class Player : ScriptableObject
 {
     public int currMoney = 0;
-    public bool introCompleted;
+    public bool introCompleted, tutorialCompleted;
 }

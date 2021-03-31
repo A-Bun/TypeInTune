@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: TutorialShopP1
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - "The \u201CSHOP\u201D button opens the music shop, which allows you to buy new
+    songs for your collection (and some other things too)."
+  - The shop does get updated every now and then. Go ahead and check it out.
+  isComplete: 0

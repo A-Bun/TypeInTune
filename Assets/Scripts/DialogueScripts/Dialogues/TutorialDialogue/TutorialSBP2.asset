@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: TutorialSBP2
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - "The left page shows the song\u2019s title and artist."
+  - The right page shows how many times you've played the song, how much money you've
+    made from playing the song,
+  - "how many mistakes you've made when playing the song, and the song\u2019s duration."
+  - Use the buttons at the bottom of each page to look through the different songs
+    you have unlocked.
+  - Also, you can use these buttons to listen to the current song you're viewing.
+  - Now, put that book down so we can continue the tour.
+  isComplete: 0

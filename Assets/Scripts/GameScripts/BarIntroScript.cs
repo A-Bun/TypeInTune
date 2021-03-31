@@ -73,10 +73,4 @@ public class BarIntroScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
         manager.StartDialogue(dialogue);
     }
-
-    IEnumerator BeginDialogue(Dialogue dial)
-    {
-        yield return null;
-        manager.StartDialogue(dial);
-    }
 }

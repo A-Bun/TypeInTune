@@ -9,10 +9,12 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private bool isTextBox;
     private string prevSentence;
+    public string currSentence;
     public Dialogue currDialogue;
     public TextMeshProUGUI dialogueText;
     public Image textBox;
     public Animator animator;
+    public GameObject blocker;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +29,13 @@ public class DialogueManager : MonoBehaviour
         prevSentence = dialogueText.text;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StartDialogue(Dialogue dialogue)
     {
+        if(blocker != null)
+        {
+            blocker.SetActive(true);
+        }
+
         currDialogue = dialogue;
         sentences.Clear();
 
@@ -78,6 +79,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = "";
         prevSentence = sentence;
+        currSentence = sentence;
 
         for (int i = 0; i < sentence.Length; i++)
         {
@@ -96,5 +98,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         currDialogue.isComplete = true;
+
+        if (blocker != null)
+        {
+            blocker.SetActive(false);
+        }
     }
 }
