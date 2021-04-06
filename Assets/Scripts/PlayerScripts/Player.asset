@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfbcb6fc2cbaa846b2d1904b7a9d54d, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  currMoney: 10
+  currMoney: 0
   introCompleted: 0
   tutorialCompleted: 0

@@ -1,4 +1,8 @@
-﻿2021-03-30		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-04-06		Alexis Peoples		<alexisp30ples@gmail.com>
+* The pause menu and its animations are now in the game, however certain buttons (Save, Load, and Settings) have no functionality yet.
+* 
+
+2021-03-30		Alexis Peoples		<alexisp30ples@gmail.com>
 * 3/4 of the tutorial is now complete.
 	* Now, the songbook part and the shop part of the tutorial are done.
 	* All that's left to connect to the tutorial is the explanation of the letter typing.

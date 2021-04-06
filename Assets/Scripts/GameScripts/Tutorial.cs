@@ -11,7 +11,7 @@ public class Tutorial : MonoBehaviour
     public Button songbookButton, shopButton, laptopButton, buyButton;
     public DialogueManager manager;
     public List<Dialogue> dialogues = new List<Dialogue>();
-    private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5;
+    private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5, dayStart;
     private Image image;
     private GameObject textBox;
     private Vector3 orgPos, pos;
@@ -47,10 +47,12 @@ public class Tutorial : MonoBehaviour
         {
             boxShop.SetActive(true);
         }
-        else if(dialogues[5].isComplete)
+        else if(dialogues[5].isComplete && !dayStart)
         {
+            dayStart = true;
             songbookButton.enabled = true;
             laptopButton.enabled = true;
+            laptopButton.onClick.AddListener(HandleFirstDay);
         }    
 
         if (dialogues[0].isComplete && !sbStart)
@@ -154,6 +156,11 @@ public class Tutorial : MonoBehaviour
                 shopEnd = true;
             }
         }
+    }
+
+    public void HandleFirstDay()
+    {
+
     }
 
     private void SaveSongDialogue()
