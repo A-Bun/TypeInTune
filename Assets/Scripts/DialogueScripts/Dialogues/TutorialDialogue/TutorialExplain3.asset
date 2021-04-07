@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: TutorialExplain3
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - "See, that\u2019s what happens!"
+  - "The more mistakes you have, the less money you\u2019ll make for the song, so
+    try your best."
+  - "Don\u2019t worry, this first letter\u2019s mistakes are free of charge."
+  - Anyway, as you type, you will reach checkpoints in the letter.
+  - "When you reach the first one, you won\u2019t be able to type the next character
+    because the song will start playing."
+  - The song will play for a certain amount of time, and once you hear it stop, you
+    will be able to start typing again (give or take a few seconds).
+  - "Try it out now by typing until you can\u2019t anymore."
+  isComplete: 0

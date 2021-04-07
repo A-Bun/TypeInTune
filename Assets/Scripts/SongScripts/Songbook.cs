@@ -46,10 +46,8 @@ public class Songbook : MonoBehaviour
 
     public void AddSong(Song newSong)
     {
-        if (newSong.status)
-        {
-            ownedSongs.Add(newSong);
-        }
+        newSong.status = true;
+        ownedSongs.Add(newSong);
     }
 
     public void SetSongInfo()

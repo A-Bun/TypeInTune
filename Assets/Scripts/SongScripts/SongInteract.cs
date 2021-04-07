@@ -10,9 +10,12 @@ public class SongInteract : MonoBehaviour
     private float currTime, interval;
     private int salary, index, currMins, currSecs, ten, sixty;
     private TypeTrackerV2 ttv2;
-    private bool waitToEnd;
-    public GameObject blocker, songInfo, errorInfo;
+    private bool waitToEnd, tutComp, dial9;
     private TextMeshProUGUI tempText;
+    private Tutorial tutorial;
+
+    public GameObject blocker, songInfo, errorInfo;
+    public PlayerInteract pi;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +44,14 @@ public class SongInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateSalary();
+        tutComp = ttv2.tutComplete;
+        tutorial = ttv2.tut;
+        blocker.SetActive(true);
+
+        if (tutComp)
+        {
+            UpdateSalary();
+        }
         PlayOrPause();
         SetSongbook();
 
@@ -115,8 +125,23 @@ public class SongInteract : MonoBehaviour
         else if (audioS.time >= (currTime + interval))
         {
             audioS.Pause();
-            ttv2.pause = false;
+
+            if(!tutComp && !tutorial.dialogues[9].isComplete && !dial9)
+            {
+                dial9 = true;
+                tutorial.manager.StartDialogue(tutorial.dialogues[9]);
+            }
+
+            if (tutComp)
+            {
+                ttv2.pause = false;
+            }
             SaveCurrTime();
+        }
+
+        if(!tutComp && tutorial.dialogues[9].isComplete && !audioS.isPlaying)
+        {
+            ttv2.pause = false;
         }
     }
 
@@ -129,9 +154,16 @@ public class SongInteract : MonoBehaviour
     {
         if (audioS.time == audioS.clip.length)
         {
+            waitToEnd = false;
+
+            if (tutComp)
+            {
+                song.totalMistakes += NumMistakes();
+            }
+
             song.timesPlayed += 1;
-            song.totalMistakes += NumMistakes();
             song.totalMoney += salary;
+            pi.IncMoney(salary);
             
             blocker.SetActive(false);
             songInfo.SetActive(false);

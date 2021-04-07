@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: TutorialExplain4
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - Nice playing, kid.
+  - That same thing happens at each checkpoint you reach after the first, ...
+  - ... the only difference being that the song will continue playing from the place
+    it stopped previously.
+  - When you finish typing the entire letter, the rest of the song will play until
+    completion, so sit back and enjoy the tunes.
+  - Once the song is complete, you will receive your payment.
+  - Now, finish that letter.
+  isComplete: 0

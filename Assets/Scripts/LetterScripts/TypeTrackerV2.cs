@@ -8,8 +8,10 @@ public class TypeTrackerV2 : MonoBehaviour
 {
     public TextMeshProUGUI originalLetter = null;
     public Image wrong;
-    public bool pause;
+    public bool pause, tutComplete, wrongToRight;
     public int numMistakes;
+    public Tutorial tut;
+    public string typedChars;
     
     public LetterInteract letIn;
     private List<string> remainingWords = new List<string>();
@@ -34,6 +36,13 @@ public class TypeTrackerV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tutComplete = tut.pi.GetTutorialStatus();
+
+        if(!tutComplete && !tut.dialogues[6].isComplete)
+        {
+            pause = true;
+        }
+
         if (!letIn.LetterStatus() && !pause)
         {
             CheckInput();
@@ -76,6 +85,11 @@ public class TypeTrackerV2 : MonoBehaviour
 
         if (IsCorrectChar(typedChar))
         {
+            if (!tutComplete && typedChars.Length <= 2)
+            {
+                typedChars = typedChars + typedChar;
+            }
+
             originalLetter.text = "<color=green>" + tempStr[0][0] + "</color>";
 
             if (sentenceIndex == 0 && charIndex == 0)
@@ -180,12 +194,31 @@ public class TypeTrackerV2 : MonoBehaviour
         {
             status = true;
             wrong.gameObject.SetActive(false);
+
+            if(tut.wrongTime && !wrongToRight)
+            {
+                status = false;
+            }
+            else if(tut.wrongTime && wrongToRight)
+            {
+                tut.wrongTime = false;
+                tut.manager.StartDialogue(tut.dialogues[8]);
+                pause = true;
+            }
         }
         else
         {
             status = false;
             wrong.gameObject.SetActive(true);
-            numMistakes++;
+
+            if (tutComplete)
+            {
+                numMistakes++;
+            }
+            else if(tut.wrongTime)
+            {
+                wrongToRight = true;
+            }
         }
 
         return status;

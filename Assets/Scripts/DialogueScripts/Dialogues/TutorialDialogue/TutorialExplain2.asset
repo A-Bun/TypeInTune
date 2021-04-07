@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: TutorialExplain2
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - 'See how those colors changed? Let me explain:'
+  - "All the black characters are the characters you haven\u2019t reached yet."
+  - All the characters you already typed are colored green.
+  - The red character is the next character you have to type.
+  - "REMEMBER THIS: If you don\u2019t see any red character, that means the next
+    character you have to type is a space (using the spacebar of course)."
+  - "If you type the wrong character, an indicator will pop up telling you it\u2019s
+    wrong and the mistake counter will increase."
+  - "Once you type the correct character, the \u201Cwrong character\u201D indicator
+    will go away."
+  - Go ahead and give failing a try (just to see).
+  isComplete: 0

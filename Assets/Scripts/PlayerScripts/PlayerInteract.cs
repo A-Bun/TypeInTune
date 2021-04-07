@@ -35,4 +35,24 @@ public class PlayerInteract : MonoBehaviour
 
         return bought;
     }
+
+    public bool GetIntroStatus()
+    {
+        return player.introCompleted;
+    }
+
+    public void SetIntroStatus(bool status)
+    {
+        player.introCompleted = status;
+    }
+
+    public bool GetTutorialStatus()
+    {
+        return player.tutorialCompleted;
+    }
+
+    public void SetTutorialStatus(bool status)
+    {
+        player.tutorialCompleted = status;
+    }
 }

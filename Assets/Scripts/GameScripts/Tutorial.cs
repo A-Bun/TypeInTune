@@ -6,25 +6,32 @@ using TMPro;
 
 public class Tutorial : MonoBehaviour
 {
-    public Player player;
+    public PlayerInteract pi;
     public GameObject personUI, blocker, songbookPanel, shopPanel, boxSB, boxShop, boxLap;
-    public Button songbookButton, shopButton, laptopButton, buyButton;
+    public GameObject letter, boxLetter, textBox;
+    public Button songbookButton, shopButton, laptopButton, buyButton, yesButton;
     public DialogueManager manager;
     public List<Dialogue> dialogues = new List<Dialogue>();
-    private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5, dayStart;
+    public bool wrongTime;
+
+    private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5;
+    private bool dayStart, dial6, doneSen;
     private Image image;
-    private GameObject textBox;
     private Vector3 orgPos, pos;
+    private TypeTrackerV2 typeTrack;
+    private GameObject bossImage;
 
     void Start()
     {
-        if(player.tutorialCompleted)
+        if(pi.GetTutorialStatus())
         {
             gameObject.GetComponent<Tutorial>().enabled = false;
         }
         else
         {
+            typeTrack = letter.GetComponent<TypeTrackerV2>();
             textBox = personUI.transform.GetChild(1).gameObject;
+            bossImage = personUI.transform.GetChild(0).gameObject;
             orgPos = textBox.transform.position;
             blocker.SetActive(true);
             songbookButton.enabled = false;
@@ -52,8 +59,16 @@ public class Tutorial : MonoBehaviour
             dayStart = true;
             songbookButton.enabled = true;
             laptopButton.enabled = true;
-            laptopButton.onClick.AddListener(HandleFirstDay);
+            yesButton.onClick.AddListener(HandleFirstDay);
         }    
+        else if(dialogues[10].isComplete)
+        {
+            bossImage.SetActive(false);
+            pi.SetTutorialStatus(true);
+            laptopButton.enabled = false;
+            gameObject.GetComponent<Tutorial>().enabled = false;
+
+        }
 
         if (dialogues[0].isComplete && !sbStart)
         {
@@ -85,6 +100,10 @@ public class Tutorial : MonoBehaviour
         else if(shopStart && !shopEnd)
         {
             HandleShop();
+        }
+        else if(lapStart && !lapEnd)
+        {
+            HandleFirstDay();
         }
     }
 
@@ -160,7 +179,55 @@ public class Tutorial : MonoBehaviour
 
     public void HandleFirstDay()
     {
+        if (!lapStart)
+        {
+            lapStart = true;
+            pos = new Vector3(0f, 0f, 0f);
+            MoveTextBox(personUI.transform, pos);
 
+            manager.StartDialogue(dialogues[6]);
+            boxLetter.SetActive(true);
+        }
+
+        if (lapEnd == false)
+        {
+            if (dialogues[6].isComplete && !dial6)
+            {
+                dial6 = true;
+                boxLetter.SetActive(false);
+                typeTrack.pause = false;
+            }
+
+            if(typeTrack.typedChars.Length == 2)
+            {
+                typeTrack.typedChars = "done";
+                typeTrack.pause = true;
+                manager.StartDialogue(dialogues[7]);
+            }
+
+            if(dialogues[7].isComplete && !typeTrack.wrongToRight)
+            {
+                wrongTime = true;
+                typeTrack.pause = false;
+            }
+
+            if (dialogues[8].isComplete && !doneSen)
+            {
+                doneSen = true;
+                typeTrack.pause = false;
+            }
+
+            if (manager.currDialogue == dialogues[9] && !dialogues[9].isComplete)
+            {
+                typeTrack.pause = true;
+            }
+
+            if(letter.activeInHierarchy == false)
+            {
+                lapEnd = true;
+                manager.StartDialogue(dialogues[10]);
+            }
+        }
     }
 
     private void SaveSongDialogue()

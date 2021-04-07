@@ -15,11 +15,11 @@ MonoBehaviour:
   speakerName: Boss
   sentences:
   - Hey kid. Not an early bird, eh?
-  - "Well, don\u2019t worry about it; ya normally won\u2019t be here \u2018til the
+  - "Well, don\u2019t worry about it; you normally won\u2019t be here \u2018til the
     evenin\u2019."
-  - I just wanted ya to come in early on ya first day, so ya can learn the ropes.
-  - "Yeah, I know ya good at playin\u2019 the piano, but that\u2019s not the only
-    rope kid."
-  - "Enough yappin\u2019. Ya got a lot to learn, so let\u2019s get to business."
+  - I just wanted you to come in early on your first day, so you can learn the ropes.
+  - "Yeah, I know you're good at playin\u2019 the piano, but that\u2019s not the
+    only rope kid."
+  - "Enough yappin\u2019. You got a lot to learn, so let\u2019s get to business."
   - Welcome to <bar name>!
   isComplete: 0

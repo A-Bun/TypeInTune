@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: TutorialOutro
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - "You\u2019ve done it! Wonderful job on your first try!"
+  - "Well, them\u2019s the ropes I promised you. Looks like you're ready to tackle
+    things all on your own."
+  - "You\u2019ll be a pro in no time, kid."
+  - "That\u2019s it for today. I gotta close the place before your shift tonight,
+    so I\u2019ll see you here dark and late for tomorrow night\u2019s shift."
+  - HA, get it?
+  - "\u201CDark and late\u201D instead of \u201Cbright and early?\u201D"
+  - HAHAHAHAHAHAHAHAHA
+  - .  .  .
+  - Well at least a chuckle would have been nice, jeez.
+  - "Anyway, you\u2019re free to look around your workspace some more if you want."
+  - "When you\u2019re ready to leave for the day, just press the \u201CClock Out\u201D
+    button in the bottom right. Goodbye."
+  isComplete: 0
