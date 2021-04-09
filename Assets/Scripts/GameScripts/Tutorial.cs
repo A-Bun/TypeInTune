@@ -8,16 +8,16 @@ public class Tutorial : MonoBehaviour
 {
     public PlayerInteract pi;
     public GameObject personUI, blocker, songbookPanel, shopPanel, boxSB, boxShop, boxLap;
-    public GameObject letter, boxLetter, textBox;
-    public Button songbookButton, shopButton, laptopButton, buyButton, yesButton;
+    public GameObject letter, boxLetter, textBox, fader;
+    public Button songbookButton, shopButton, laptopButton, buyButton, yesButton, clockButton;
     public DialogueManager manager;
     public List<Dialogue> dialogues = new List<Dialogue>();
     public bool wrongTime;
 
     private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5;
-    private bool dayStart, dial6, doneSen;
+    private bool dayStart, dial6, doneSen, bought;
     private Image image;
-    private Vector3 orgPos, pos;
+    private Vector3 orgPos, botMid;
     private TypeTrackerV2 typeTrack;
     private GameObject bossImage;
 
@@ -38,8 +38,10 @@ public class Tutorial : MonoBehaviour
             shopButton.enabled = false;
             laptopButton.enabled = false;
             buyButton.enabled = false;
-            songbookPanel.transform.GetChild(3).gameObject.SetActive(false);
+            clockButton.enabled = false;
+            songbookPanel.transform.GetChild(2).gameObject.SetActive(false);
             shopPanel.transform.GetChild(1).gameObject.SetActive(false);
+            botMid = new Vector3(0f, -290f, 0f);
             StartCoroutine(WaitForDialogue(dialogues[0]));
         }
     }
@@ -66,8 +68,8 @@ public class Tutorial : MonoBehaviour
             bossImage.SetActive(false);
             pi.SetTutorialStatus(true);
             laptopButton.enabled = false;
+            clockButton.enabled = true;
             gameObject.GetComponent<Tutorial>().enabled = false;
-
         }
 
         if (dialogues[0].isComplete && !sbStart)
@@ -109,13 +111,10 @@ public class Tutorial : MonoBehaviour
 
     public void HandleSongbook()
     {
-        GameObject temp = songbookPanel.transform.GetChild(2).gameObject;
-
         if (!sbStart)
         {
             sbStart = true;
-            pos = new Vector3(0f, 0f, 0f);
-            MoveTextBox(songbookPanel.transform, pos);
+            MoveTextBox(songbookPanel.transform, botMid);
 
             manager.StartDialogue(dialogues[1]);
             image = songbookPanel.transform.GetChild(0).GetComponent<Image>();
@@ -132,17 +131,15 @@ public class Tutorial : MonoBehaviour
                 image = songbookPanel.transform.GetChild(1).GetComponent<Image>();
                 image.enabled = true;
             }
-            else if (manager.currSentence == dialogues[1].sentences[4])
+            else if (manager.currSentence == dialogues[1].sentences[3])
             {
                 image.enabled = false;
-                temp.SetActive(true);
             }
 
             if (dialogues[1].isComplete)
             {
-                temp.SetActive(false);
                 songbookButton.enabled = false;
-                songbookPanel.transform.GetChild(3).gameObject.SetActive(true);
+                songbookPanel.transform.GetChild(2).gameObject.SetActive(true);
                 sbEnd = true;
             }
         }
@@ -153,8 +150,7 @@ public class Tutorial : MonoBehaviour
         if (!shopStart)
         {
             shopStart = true;
-            pos = new Vector3(0f, 0f, 0f);
-            MoveTextBox(shopPanel.transform, pos);
+            MoveTextBox(shopPanel.transform, botMid);
 
             manager.StartDialogue(dialogues[3]);
             boxShop.SetActive(false);
@@ -163,14 +159,14 @@ public class Tutorial : MonoBehaviour
 
         if (shopEnd == false)
         {
-            if(dialogues[3].isComplete)
+            if(dialogues[3].isComplete && !bought)
             {
+                bought = true;
                 buyButton.enabled = true;
             }
 
             if (dialogues[4].isComplete)
             {
-                buyButton.enabled = false;
                 shopPanel.transform.GetChild(1).gameObject.SetActive(true);
                 shopEnd = true;
             }
@@ -182,8 +178,7 @@ public class Tutorial : MonoBehaviour
         if (!lapStart)
         {
             lapStart = true;
-            pos = new Vector3(0f, 0f, 0f);
-            MoveTextBox(personUI.transform, pos);
+            MoveTextBox(fader.transform, botMid);
 
             manager.StartDialogue(dialogues[6]);
             boxLetter.SetActive(true);
@@ -225,6 +220,7 @@ public class Tutorial : MonoBehaviour
             if(letter.activeInHierarchy == false)
             {
                 lapEnd = true;
+                ResetTextBox();
                 manager.StartDialogue(dialogues[10]);
             }
         }
@@ -233,13 +229,14 @@ public class Tutorial : MonoBehaviour
     private void SaveSongDialogue()
     {
         buyButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "SOLD";
+        buyButton.enabled = false;
         manager.StartDialogue(dialogues[4]);
     }
 
     public void MoveTextBox(Transform newParent, Vector3 newPos)
     {
         textBox.transform.SetParent(newParent);
-        textBox.transform.position = newPos;
+        textBox.GetComponent<RectTransform>().localPosition = newPos;
     }
 
     public void ResetTextBox()

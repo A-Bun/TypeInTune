@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea7eb7f912ff2c419627622ebcef431, type: 3}
+  m_Name: Twinkle
+  m_EditorClassIdentifier: 
+  songTitle: Twinkle Twinkle Little Star
+  songArtist: Jane Taylor
+  songAudio: {fileID: 8300000, guid: f58535dc737e31f4db825e746d5324b2, type: 3}
+  songDuration: 22.413061
+  timesPlayed: 0
+  songCost: 0
+  totalMistakes: 0
+  totalMoney: 0
+  songSalary: 05000000
+  salaryMarks: 
+  status: 1

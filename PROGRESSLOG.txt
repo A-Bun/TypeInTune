@@ -1,4 +1,14 @@
-﻿2021-04-06		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-04-09		Alexis Peoples		<alexisp30ples@gmail.com>
+* Added a quit button to the main menu screen (duh).
+* I did a quick fix (hardcoding values) for the textbox repositioning for the tutorial so it'd be ready in time. I plan to go back and figure out a better way after today.
+* Added audio I made for the song "twinkle twinkle little star." This song is used in the tutorial letter.
+* Added a clock out button to end the tutorial and transition to the more to come scene.
+* Finished the prototype.
+
+2021-04-07		Alexis Peoples		<alexisp30ples@gmail.com>
+* A "More to Come" scene has been added to the game for the prototype.
+
+2021-04-06		Alexis Peoples		<alexisp30ples@gmail.com>
 * The pause menu and its animations are now in the game, however certain buttons (Save, Load, and Settings) have no functionality yet.
 * The tutorial is complete (apart from some textbox repositioning that needs to be done).
 

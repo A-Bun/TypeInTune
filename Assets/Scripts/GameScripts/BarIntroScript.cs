@@ -8,15 +8,17 @@ public class BarIntroScript : MonoBehaviour
     public DialogueManager manager;
     public Dialogue introDialogue1, introDialogue2;
     public GameObject intro, textBox;
-    public Player player;
+    public PlayerInteract pi;
     public Animator animator;
+    public Button nextSceneButton;
     public bool second;
+
     private bool triggered, done;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (player.introCompleted)
+        if (pi.GetIntroStatus())
         {
             intro.SetActive(false);
             gameObject.GetComponent<BarIntroScript>().enabled = false;
@@ -24,6 +26,7 @@ public class BarIntroScript : MonoBehaviour
         else
         {
             intro.SetActive(true);
+            nextSceneButton.enabled = false;
             StartCoroutine(WaitForDialogue(introDialogue1));
         }
     }
@@ -45,7 +48,8 @@ public class BarIntroScript : MonoBehaviour
         else if (introDialogue2.isComplete)
         {
             animator.SetTrigger("FadeEnd");
-            player.introCompleted = true;
+            nextSceneButton.enabled = true;
+            pi.SetIntroStatus(true);
         }
     }
 
