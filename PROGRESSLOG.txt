@@ -1,4 +1,7 @@
-﻿2021-04-09		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-04-13		Alexis Peoples		<alexisp30ples@gmail.com>
+* I finished more of the boss' artwork.
+
+2021-04-09		Alexis Peoples		<alexisp30ples@gmail.com>
 * Added a quit button to the main menu screen (duh).
 * I did a quick fix (hardcoding values) for the textbox repositioning for the tutorial so it'd be ready in time. I plan to go back and figure out a better way after today.
 * Added audio I made for the song "twinkle twinkle little star." This song is used in the tutorial letter.
