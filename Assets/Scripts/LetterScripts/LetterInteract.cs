@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class LetterInteract : MonoBehaviour
 {
     public Letter letter;
+    public Songbook songbook;
+    private int songIndex;
+    private List<Song> songs = new List<Song>();
+    private List<Song> allSongs = new List<Song>();
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +18,29 @@ public class LetterInteract : MonoBehaviour
         {
             GetComponent<Image>().sprite = letter.paper;
         }
+
+        allSongs.AddRange(Resources.LoadAll<Song>("Songs"));
+        HideUnowned();
+
+        if (letter.title != "TutorialLetter")
+        {
+            letter.song = null;
+            songIndex = Random.Range(0, songs.Count);
+            letter.song = songs[songIndex];
+            letter.song.interval = (int)letter.song.songDuration / letter.sentences.Count;
+        }
     }
+    private void HideUnowned()
+    {
+        for (int i = 0; i < allSongs.Count; i++)
+        {
+            if (allSongs[i].status)
+            {
+                songs.Add(allSongs[i]);
+            }
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -7,7 +7,7 @@ public class BarIntroScript : MonoBehaviour
 {
     public DialogueManager manager;
     public Dialogue introDialogue1, introDialogue2;
-    public GameObject intro, textBox;
+    public GameObject intro, textBox, player;
     public PlayerInteract pi;
     public Animator animator;
     public Button nextSceneButton;
@@ -21,10 +21,12 @@ public class BarIntroScript : MonoBehaviour
         if (pi.GetIntroStatus())
         {
             intro.SetActive(false);
+            player.SetActive(true);
             gameObject.GetComponent<BarIntroScript>().enabled = false;
         }
         else
         {
+            player.SetActive(false);
             intro.SetActive(true);
             nextSceneButton.enabled = false;
             StartCoroutine(WaitForDialogue(introDialogue1));

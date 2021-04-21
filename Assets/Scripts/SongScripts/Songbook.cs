@@ -8,8 +8,8 @@ public class Songbook : MonoBehaviour
 {
     public Button prevSong, nextSong;
     public TextMeshProUGUI title, artist, times, money, mistakes, duration;
+    public List<Song> ownedSongs = new List<Song>();
     private List<Song> allSongs = new List<Song>();
-    private List<Song> ownedSongs = new List<Song>();
     private Song currSong;
     private int index;
     private AudioSource audioS;

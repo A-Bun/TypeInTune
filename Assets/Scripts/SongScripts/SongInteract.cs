@@ -30,7 +30,8 @@ public class SongInteract : MonoBehaviour
         song.songDuration = song.songAudio.length;
         currTime = 0;
         index = 0;
-        interval = (song.songDuration / ttv2.letIn.letter.interval);
+        //interval = (song.songDuration / ttv2.letIn.letter.interval);
+        interval = song.interval;
         waitToEnd = false;
         ten = 10;
         sixty = 60;

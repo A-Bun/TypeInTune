@@ -20,6 +20,7 @@ MonoBehaviour:
   songCost: 0
   totalMistakes: 0
   totalMoney: 0
-  songSalary: 
-  salaryMarks: 
+  songSalary: 050000000200000001000000
+  salaryMarks: 000000000200000004000000
   status: 0
+  interval: 0

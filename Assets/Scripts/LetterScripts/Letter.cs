@@ -12,7 +12,7 @@ public class Letter : ScriptableObject
     public bool isComplete;
     public Sprite paper;
     public Song song;
-    public int interval;
+    //public int interval;
 
     //public void ResetLetter()
     //{

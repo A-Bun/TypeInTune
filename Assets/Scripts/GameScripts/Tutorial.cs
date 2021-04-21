@@ -11,8 +11,9 @@ public class Tutorial : MonoBehaviour
     public GameObject letter, boxLetter, textBox, fader;
     public Button songbookButton, shopButton, laptopButton, buyButton, yesButton, clockButton;
     public DialogueManager manager;
-    public List<Dialogue> dialogues = new List<Dialogue>();
     public bool wrongTime;
+    public Letter tutLetter;
+    public List<Dialogue> dialogues = new List<Dialogue>();
 
     private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5;
     private bool dayStart, dial6, doneSen, bought;
@@ -25,11 +26,13 @@ public class Tutorial : MonoBehaviour
     {
         if(pi.GetTutorialStatus())
         {
+            personUI.SetActive(false);
             gameObject.GetComponent<Tutorial>().enabled = false;
         }
         else
         {
             typeTrack = letter.GetComponent<TypeTrackerV2>();
+            letter.GetComponent<LetterInteract>().letter = tutLetter;
             textBox = personUI.transform.GetChild(1).gameObject;
             bossImage = personUI.transform.GetChild(0).gameObject;
             orgPos = textBox.transform.position;

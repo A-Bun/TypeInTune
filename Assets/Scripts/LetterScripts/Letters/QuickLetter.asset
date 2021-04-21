@@ -19,5 +19,4 @@ MonoBehaviour:
   completedSentences: 0000
   isComplete: 0
   paper: {fileID: 0}
-  song: {fileID: 11400000, guid: 504d514ef1983eb469909a0b25f6a598, type: 2}
-  interval: 2
+  song: {fileID: 11400000, guid: fc90a5130a138d24e9abef15c95d512e, type: 2}

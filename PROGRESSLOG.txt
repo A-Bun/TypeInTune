@@ -1,4 +1,10 @@
-﻿2021-04-13		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-04-20		Alexis Peoples		<alexisp30ples@gmail.com>
+* The player now shows up in the bar scene after the intro is completed.
+* When the player reaches the piano (when walking in the bar scene), the scene transitions to the "at piano" scene automatically.
+* If the tutorial is complete, each letter that appears when the laptop is clicked has a random song attached to it.
+	* If the tutorial isn't complete, the tutorial letter appears when the laptop is clicked and has the tutorial song ("Twinkle Twinkle Little Star") attached to it.
+
+2021-04-13		Alexis Peoples		<alexisp30ples@gmail.com>
 * I finished more of the boss' artwork.
 
 2021-04-09		Alexis Peoples		<alexisp30ples@gmail.com>
