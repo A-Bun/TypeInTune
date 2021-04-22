@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool paused = false;
     public GameObject pauseMenu, menuButtons, quitButtons;
+    public PlayerInfo player;
     private Animator anim;
 
     void Start()
@@ -79,7 +80,7 @@ public class PauseMenu : MonoBehaviour
      */
     public void SaveGame()
     {
-        // to be determined
+        SaveSystem.SavePlayer(player);
         Debug.Log("Saving Game...");
     }
 
@@ -88,7 +89,16 @@ public class PauseMenu : MonoBehaviour
      */
     public void LoadGame()
     {
-        // to be determined
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        player.day = data.day;
+        player.currMoney = data.currMoney;
+        player.ownedMusic = data.ownedMusic;
+        player.ownedPianos = data.ownedPianos;
+        player.comLetters = data.comLetters;
+        player.introCompleted = data.introCompleted;
+        player.tutorialCompleted = data.tutorialCompleted;
+
         Debug.Log("Loading Game...");
     }
 
