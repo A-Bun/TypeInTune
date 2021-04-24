@@ -13,10 +13,11 @@ public class Tutorial : MonoBehaviour
     public DialogueManager manager;
     public bool wrongTime;
     public Letter tutLetter;
+    public Fader fade;
     public List<Dialogue> dialogues = new List<Dialogue>();
 
     private bool sbStart, sbEnd, shopStart, shopEnd, lapStart, lapEnd, dial2, dial5;
-    private bool dayStart, dial6, doneSen, bought;
+    private bool dayStart, dial6, doneSen, bought, dayEnd;
     private Image image;
     private Vector3 orgPos, botMid;
     private TypeTrackerV2 typeTrack;
@@ -27,6 +28,7 @@ public class Tutorial : MonoBehaviour
         if(pi.GetTutorialStatus())
         {
             personUI.SetActive(false);
+            clockButton.onClick.AddListener(SaveToNextScene);
             gameObject.GetComponent<Tutorial>().enabled = false;
         }
         else
@@ -66,13 +68,15 @@ public class Tutorial : MonoBehaviour
             laptopButton.enabled = true;
             yesButton.onClick.AddListener(HandleFirstDay);
         }    
-        else if(dialogues[10].isComplete)
+        else if(dialogues[10].isComplete && !dayEnd)
         {
+            dayEnd = true;
             bossImage.SetActive(false);
-            pi.SetTutorialStatus(true);
+            //pi.SetTutorialStatus(true);   //ISSUE: Tutorial won't stay marked as completed unless done this way
             laptopButton.enabled = false;
             clockButton.enabled = true;
-            gameObject.GetComponent<Tutorial>().enabled = false;
+            clockButton.onClick.AddListener(EndFirstDay);
+            //gameObject.GetComponent<Tutorial>().enabled = false;
         }
 
         if (dialogues[0].isComplete && !sbStart)
@@ -110,6 +114,12 @@ public class Tutorial : MonoBehaviour
         {
             HandleFirstDay();
         }
+    }
+
+    public void Skip()
+    {
+        ResetTextBox();
+        manager.StartDialogue(dialogues[10]);
     }
 
     public void HandleSongbook()
@@ -227,6 +237,17 @@ public class Tutorial : MonoBehaviour
                 manager.StartDialogue(dialogues[10]);
             }
         }
+    }
+
+    public void EndFirstDay()
+    {
+        pi.SetTutorialStatus(true);     //ISSUE: I need tutorial to stay marked as completed when done this way
+        SaveToNextScene();
+    }
+
+    public void SaveToNextScene()
+    {
+        fade.FadeToNextLevel();
     }
 
     private void SaveSongDialogue()

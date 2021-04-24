@@ -43,6 +43,8 @@
 		Link to the license: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
 	4) Thanks to Kyle Suchar on Youtube for showing me how to do 2D player movement. Here's the
 		video: https://www.youtube.com/watch?v=L6Q6VHueWnU&ab_channel=KyleSuchar
+	5) Thanks to user "Addyarb" from Unity Answers for teaching me how to run a function as soon
+		as a scene loads. Here is a link to their answer: https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
 
 # Changelog
 	*I don't know what this means yet.*

@@ -22,4 +22,5 @@ MonoBehaviour:
   totalMoney: 0
   songSalary: f401000064000000
   salaryMarks: 0000000001000000
-  status: 1
+  owned: 1
+  interval: 0

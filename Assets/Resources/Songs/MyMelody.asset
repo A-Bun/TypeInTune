@@ -15,12 +15,12 @@ MonoBehaviour:
   songTitle: My Melody
   songArtist: Abun
   songAudio: {fileID: 8300000, guid: 5e2bdad7c9495924697e81c299545ce3, type: 3}
-  songDuration: 0
+  songDuration: 6.5567346
   timesPlayed: 0
   songCost: 0
   totalMistakes: 0
   totalMoney: 0
   songSalary: 050000000200000001000000
   salaryMarks: 000000000200000004000000
-  status: 0
+  owned: 0
   interval: 0

@@ -37,7 +37,7 @@ public class Songbook : MonoBehaviour
     {
         for(int i = 0; i < allSongs.Count; i++)
         {
-            if(allSongs[i].status)
+            if(allSongs[i].owned)
             {
                 ownedSongs.Add(allSongs[i]);
             }
@@ -46,7 +46,7 @@ public class Songbook : MonoBehaviour
 
     public void AddSong(Song newSong)
     {
-        newSong.status = true;
+        newSong.owned = true;
         ownedSongs.Add(newSong);
     }
 

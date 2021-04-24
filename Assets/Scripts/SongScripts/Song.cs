@@ -12,7 +12,7 @@ public class Song : ScriptableObject
     public int timesPlayed = 0, songCost = 0, totalMistakes = 0, totalMoney = 0;
     public List<int> songSalary = new List<int>();
     public List<int> salaryMarks = new List<int>();
-    public bool status = false;
+    public bool owned = false;
     public int interval;
 
     public string DetailedDuration()

@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public Player player;
-
-    public void SetMoney()
+    public PlayerInfo player;
+    
+    public int GetDay()
     {
+        return player.day;
+    }
+
+    public void SetDay(int num)
+    {
+        player.day = num;
+    }
+
+    public void IncDay()
+    {
+        player.day += 1;
     }
 
     public int GetMoney()
     {
         return player.currMoney;
+    }
+
+    public void SetMoney(int amount)
+    {
+        player.currMoney = amount;
     }
 
     public void IncMoney(int amount)
@@ -36,6 +52,21 @@ public class PlayerInteract : MonoBehaviour
         return bought;
     }
 
+    public int GetPrevMoney()
+    {
+        return player.prevDayMoney;
+    }
+
+    public void SetPrevMoney(int amount)
+    {
+        player.prevDayMoney = amount;
+    }
+
+    public void SyncPrevMoney()
+    {
+        player.prevDayMoney = player.currMoney;
+    }
+
     public bool GetIntroStatus()
     {
         return player.introCompleted;
@@ -54,5 +85,24 @@ public class PlayerInteract : MonoBehaviour
     public void SetTutorialStatus(bool status)
     {
         player.tutorialCompleted = status;
+    }
+
+    public void ResetProgress()
+    {
+        SetDay(0);
+        SetMoney(0);
+        SetPrevMoney(0);
+        player.ownedMusic.Clear();
+        player.ownedPianos.Clear();
+        player.comDialogues.Clear();
+        player.comLetters.Clear();
+        player.ResetSongs();
+        player.ResetPianos();
+        player.ResetDialogues();
+        player.ResetLetters();
+        SetIntroStatus(false);
+        SetTutorialStatus(false);
+
+        Debug.Log("Clearing Data...");
     }
 }

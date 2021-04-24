@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 145d29ae082963a49a2904175e3a747b, type: 3}
-  m_Name: QuickLetter
+  m_Name: TutorialLetter
   m_EditorClassIdentifier: 
-  title: Quick Letter
+  title: TutorialLetter
   sentences:
-  - 'Quickness. '
-  - Hey.
-  completedSentences: 0000
+  - 'This is my first letter. '
+  - 'I am doing so well. '
+  - I'm glad I'm trying again.
+  completedSentences: 000000
   isComplete: 0
   paper: {fileID: 0}
-  song: {fileID: 11400000, guid: fc90a5130a138d24e9abef15c95d512e, type: 2}
+  song: {fileID: 11400000, guid: 93270058af05ce54ca59649316425b41, type: 2}

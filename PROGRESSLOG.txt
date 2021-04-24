@@ -1,4 +1,19 @@
-﻿2021-04-20		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-04-23		Alexis Peoples		<alexisp30ples@gmail.com>
+* Updated the save/load system so that all the currently owned songs, all the completed dialogues, and all the completed letters can be saved and loaded.
+* When a new game is started, all player progress is reset, including all songs' owned status and stats; all dialogues and letters are set to incomplete as well.
+* Restyled main menu with simple animations and new buttons (Load and Settings).
+* Game saves between scenes, when the player quits through the pause menu, or when the player saves through the pause menu.
+* The option to load from the pause menu has been removed since the game saves between scenes. It was a pointless option.
+
+2021-04-22		Alexis Peoples		<alexisp30ples@gmail.com>
+* Added scene that wraps up each day after the player clocks out.
+	* The day you're currently on is displayed and marked as completed.
+	* The amount of money you earned for the day is displayed.
+	* The amount of money you've earned in total ia displayed.
+	* Once every amount is displayed, a "click anywhere to continue" message appears.
+		* When you click, the next day of work begins.
+
+2021-04-21		Alexis Peoples		<alexisp30ples@gmail.com>
 * Implemented a bare-boned save/load system.
 
 2021-04-20		Alexis Peoples		<alexisp30ples@gmail.com>

@@ -22,4 +22,5 @@ MonoBehaviour:
   totalMoney: 0
   songSalary: 05000000
   salaryMarks: 
-  status: 1
+  owned: 1
+  interval: 7

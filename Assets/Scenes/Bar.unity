@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5537235119192915072, guid: 0c6ef249dfa4a75448e9045669c4152d, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 460457274}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c6ef249dfa4a75448e9045669c4152d, type: 3}
 --- !u!1001 &185032052
@@ -751,6 +755,7 @@ GameObject:
   - component: {fileID: 460457273}
   - component: {fileID: 460457272}
   - component: {fileID: 460457274}
+  - component: {fileID: 460457275}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -878,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db64eac85d3274a9e596bf2da39639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 062445c1e849e1047a7a2bb95c1a55fa, type: 2}
+  player: {fileID: 460457275}
 --- !u!114 &460457274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,6 +899,29 @@ MonoBehaviour:
   pauseMenu: {fileID: 1727329828}
   menuButtons: {fileID: 1289856429}
   quitButtons: {fileID: 1108088484}
+  player: {fileID: 460457275}
+  fader: {fileID: 994063347}
+--- !u!114 &460457275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460457267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a93475584891bc49a93bd72dabd2ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: 0
+  currMoney: 0
+  currScene: 0
+  ownedMusic: []
+  ownedPianos: []
+  comLetters: []
+  introCompleted: 0
+  tutorialCompleted: 0
+  fader: {fileID: 994063347}
 --- !u!1 &524617637
 GameObject:
   m_ObjectHideFlags: 0

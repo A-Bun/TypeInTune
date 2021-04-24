@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
-  m_Name: Test1
+  m_Script: {fileID: 11500000, guid: 145d29ae082963a49a2904175e3a747b, type: 3}
+  m_Name: QuickLetter
   m_EditorClassIdentifier: 
-  speakerName: Tester1
+  title: Quick Letter
   sentences:
-  - Hello there friendo!
-  - This is a test.
-  - Hope you enjoyed!
+  - 'Quickness. '
+  - Hey.
+  completedSentences: 0000
   isComplete: 0
+  paper: {fileID: 0}
+  song: {fileID: 11400000, guid: 93270058af05ce54ca59649316425b41, type: 2}

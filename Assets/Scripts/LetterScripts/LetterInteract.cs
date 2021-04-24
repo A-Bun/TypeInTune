@@ -27,14 +27,15 @@ public class LetterInteract : MonoBehaviour
             letter.song = null;
             songIndex = Random.Range(0, songs.Count);
             letter.song = songs[songIndex];
-            letter.song.interval = (int)letter.song.songDuration / letter.sentences.Count;
         }
+
+        letter.song.interval = (int)letter.song.songDuration / letter.sentences.Count;
     }
     private void HideUnowned()
     {
         for (int i = 0; i < allSongs.Count; i++)
         {
-            if (allSongs[i].status)
+            if (allSongs[i].owned)
             {
                 songs.Add(allSongs[i]);
             }

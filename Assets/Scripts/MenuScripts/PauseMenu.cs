@@ -8,11 +8,20 @@ public class PauseMenu : MonoBehaviour
     public static bool paused = false;
     public GameObject pauseMenu, menuButtons, quitButtons;
     public PlayerInfo player;
+    public Fader fader;
     private Animator anim;
+    private bool menu;
 
     void Start()
     {
-        anim = pauseMenu.GetComponent<Animator>();
+        if (player.fader.GetCurrentLevelIndex() == 0 || player.fader.GetCurrentLevelIndex() == 3)
+        {
+            menu = true;
+        }
+        else
+        {
+            anim = pauseMenu.GetComponent<Animator>();
+        }
     }
 
     /* Update
@@ -22,7 +31,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         // checks if the excape key was pressed
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape") && !menu)
         {
             if(paused)
             {
@@ -80,6 +89,11 @@ public class PauseMenu : MonoBehaviour
      */
     public void SaveGame()
     {
+        player.SaveOwnedSongs();
+        player.SaveOwnedPianos();
+        player.SaveCompletedDialogues();
+        player.SaveCompletedLetters();
+
         SaveSystem.SavePlayer(player);
         Debug.Log("Saving Game...");
     }
@@ -91,15 +105,63 @@ public class PauseMenu : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-        player.day = data.day;
-        player.currMoney = data.currMoney;
-        player.ownedMusic = data.ownedMusic;
-        player.ownedPianos = data.ownedPianos;
-        player.comLetters = data.comLetters;
-        player.introCompleted = data.introCompleted;
-        player.tutorialCompleted = data.tutorialCompleted;
+        if (data != null)
+        {
+            player.day = data.day;
+            player.currMoney = data.currMoney;
+            player.currScene = data.currScene;
+            player.prevDayMoney = data.prevDayMoney;
+            player.ownedMusic = data.ownedMusic;
+            player.ownedPianos = data.ownedPianos;
+            player.comDialogues = data.comDialogues;
+            player.comLetters = data.comLetters;
+            player.introCompleted = data.introCompleted;
+            player.tutorialCompleted = data.tutorialCompleted;
+
+            player.LoadOwnedSongs();
+            player.LoadOwnedPianos();
+            player.LoadCompletedDialogues();
+            player.LoadCompletedLetters();
+        }
 
         Debug.Log("Loading Game...");
+    }
+
+    /* Load Overall Game
+     *   to be determined
+     */
+    public void LoadOverallGame()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        if (data != null)
+        {
+            player.day = data.day;
+            player.currMoney = data.currMoney;
+            player.currScene = data.currScene;
+            player.ownedMusic = data.ownedMusic;
+            player.ownedPianos = data.ownedPianos;
+            player.comDialogues = data.comDialogues;
+            player.comLetters = data.comLetters;
+            player.introCompleted = data.introCompleted;
+            player.tutorialCompleted = data.tutorialCompleted;
+
+            player.LoadOwnedSongs();
+            player.LoadOwnedPianos();
+            player.LoadCompletedDialogues();
+            player.LoadCompletedLetters();
+
+            if (player.fader.GetCurrentLevelIndex() != player.currScene)
+            {
+                player.fader.FadeToLevel(player.currScene);
+            }
+        }
+        else
+        {
+            Debug.LogError("There is no save file to load. Please start a new game instead.");
+        }
+
+        Debug.Log("Loading Game from Menu...");
     }
 
     /* Settings
