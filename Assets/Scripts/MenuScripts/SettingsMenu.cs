@@ -59,6 +59,14 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown("escape"))
+        {
+            SetResolution(resolutions.Length - 1);
+        }
+    }
+
     /* Set Resolution
      *   Parameter: int resolutionIndex
      *   Sets the game's resolution to the passed in index
@@ -70,6 +78,8 @@ public class SettingsMenu : MonoBehaviour
 
         // sets the game's resolution to the passed in resolution
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
+        Debug.Log("Res: " + resolution.width + ", " + resolution.height);
     }
 
     /* Set Fullscreen

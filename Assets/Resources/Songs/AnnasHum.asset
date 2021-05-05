@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea7eb7f912ff2c419627622ebcef431, type: 3}
+  m_Name: AnnasHum
+  m_EditorClassIdentifier: 
+  songTitle: Anna's Hummingbird
+  songArtist: Chad Crouch
+  songAudio: {fileID: 8300000, guid: 4d2200da46e336a43b3840e8561a1c34, type: 3}
+  songDuration: 83.173874
+  timesPlayed: 0
+  songCost: 0
+  totalMistakes: 0
+  totalMoney: 0
+  songSalary: 0a0000000700000004000000
+  salaryMarks: 000000000300000007000000
+  owned: 1
+  interval: 11

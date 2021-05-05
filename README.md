@@ -9,7 +9,7 @@
 		corresponding sentence as (in)complete.
 		
 	** Development Platform **
-		Unity Version 2.??? (2D Project)
+		Unity Version 2020.2.0f1 (2D Project)
 		
 	** Deployment Platform **
 		Itch.io

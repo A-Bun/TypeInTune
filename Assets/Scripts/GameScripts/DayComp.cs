@@ -17,7 +17,14 @@ public class DayComp : MonoBehaviour
     void Start()
     {
         day = player.GetDay();
-        dayText.text = "Day " + day + " - Complete";
+        if (day == 0)
+        {
+            dayText.text = "Training Day Complete";
+        }
+        else
+        {
+            dayText.text = "Day " + day + " Complete";
+        }
         totEarnings = player.GetMoney();
         dayEarnings = player.GetMoney() - player.GetPrevMoney();
         currTotEarnings = player.GetPrevMoney();

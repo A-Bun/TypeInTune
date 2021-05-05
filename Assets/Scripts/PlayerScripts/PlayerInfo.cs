@@ -153,10 +153,18 @@ public class PlayerInfo : MonoBehaviour
 
             if (comLetters.Contains(allLetters[i].title))
             {
+                for (int j = 0; j < allLetters[i].completedSentences.Count; j++)
+                {
+                    allLetters[i].completedSentences[j] = true;
+                }
                 allLetters[i].isComplete = true;
             }
             else
             {
+                for(int j = 0; j < allLetters[i].completedSentences.Count; j++)
+                {
+                    allLetters[i].completedSentences[j] = false;
+                }
                 allLetters[i].isComplete = false;
             }
         }
@@ -181,8 +189,8 @@ public class PlayerInfo : MonoBehaviour
 
             title = allMusic[i].songTitle;
 
-            if (title == "Twinkle Twinkle Little Star" || title == "Test Song" ||
-                title == "Quick Song" || title == "Prelude in E minor")
+            if (title == "Twinkle Twinkle Little Star" || title == "Cerberus Fossae" ||
+                title == "Anna's Hummingbird" || title == "Prelude in E minor")
             {
                 allMusic[i].owned = true;
             }

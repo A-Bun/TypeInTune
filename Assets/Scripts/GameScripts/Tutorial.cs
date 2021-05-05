@@ -71,12 +71,10 @@ public class Tutorial : MonoBehaviour
         else if(dialogues[10].isComplete && !dayEnd)
         {
             dayEnd = true;
-            bossImage.SetActive(false);
-            //pi.SetTutorialStatus(true);   //ISSUE: Tutorial won't stay marked as completed unless done this way
+            bossImage.GetComponent<Animator>().enabled = true;
             laptopButton.enabled = false;
             clockButton.enabled = true;
             clockButton.onClick.AddListener(EndFirstDay);
-            //gameObject.GetComponent<Tutorial>().enabled = false;
         }
 
         if (dialogues[0].isComplete && !sbStart)

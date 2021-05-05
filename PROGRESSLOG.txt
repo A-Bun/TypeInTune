@@ -1,4 +1,14 @@
-﻿2021-04-23		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿2021-05-04		Alexis Peoples		<alexisp30ples@gmail.com>
+ * Almost finished the bar art for the intro/bar scene.
+	* The bar shelves are filled with bottles and glasses.
+	* There is a painting on the wall now, and the beginning of another painting.
+	* The floor is now completed.
+
+2021-04-24		Alexis Peoples		<alexisp30ples@gmail.com>
+* The boss art is now complete and in the game (goodbye white placeholder box)!
+* The boss now fades away when he leaves in the tutorial.
+
+2021-04-23		Alexis Peoples		<alexisp30ples@gmail.com>
 * Updated the save/load system so that all the currently owned songs, all the completed dialogues, and all the completed letters can be saved and loaded.
 * When a new game is started, all player progress is reset, including all songs' owned status and stats; all dialogues and letters are set to incomplete as well.
 * Restyled main menu with simple animations and new buttons (Load and Settings).

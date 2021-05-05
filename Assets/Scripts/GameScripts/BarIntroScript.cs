@@ -10,7 +10,6 @@ public class BarIntroScript : MonoBehaviour
     public GameObject intro, textBox, player;
     public PlayerInteract pi;
     public Animator animator;
-    public Button nextSceneButton;
     public bool second;
 
     private bool triggered, done;
@@ -28,7 +27,6 @@ public class BarIntroScript : MonoBehaviour
         {
             player.SetActive(false);
             intro.SetActive(true);
-            nextSceneButton.enabled = false;
             StartCoroutine(WaitForDialogue(introDialogue1));
         }
     }
@@ -50,7 +48,6 @@ public class BarIntroScript : MonoBehaviour
         else if (introDialogue2.isComplete)
         {
             animator.SetTrigger("FadeEnd");
-            nextSceneButton.enabled = true;
             pi.SetIntroStatus(true);
         }
     }

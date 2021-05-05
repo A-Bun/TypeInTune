@@ -186,6 +186,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitToDesktop()
     {
         Resume();
+        SaveGame();
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
