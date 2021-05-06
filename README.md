@@ -40,11 +40,13 @@
 # Installation instructions
 	*(Once the game is deployed)*
 	1) Go to https://abun.itch.io/type-in-tune.
-	2) Click download, and once it is finished, the game will be completely installed 
-		and ready to play.
+	2) Click download for the TypeInTune.zip file. 
+	3) Once it is finished downloading, extract the files from the zip file to wherever you'd
+		like to put the game.
+	4) After the extraction finishes, the game will be completely ready to play.
 
 # Operating instructions
-	1) Run the TypeInTune.exe file to start the game.
+	1) Run the TypeInTune.exe application file to start the game.
 
 # Known bugs
 	1) When the game's resolution is changed from 1920 by 1080, the text doesn't scale 
