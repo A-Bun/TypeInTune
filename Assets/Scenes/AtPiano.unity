@@ -513,7 +513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you ready to start the day?
+  m_text: Are you ready to play?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 054abde12b08c5e40ad16d1062ba27dc, type: 2}
   m_sharedMaterial: {fileID: -179105193313839635, guid: 054abde12b08c5e40ad16d1062ba27dc, type: 2}

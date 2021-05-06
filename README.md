@@ -56,8 +56,8 @@
 			character reappears at the bar scene (as the white square). 
 			(You can move your character by using the "A" and "D" keys.)
 	3) Once you finish the game you can still press the continue button on the main menu,
-		even though you shouldn't be able to. Continuing after beating the game causes an 
-		error.
+		even though you shouldn't be able to. Continuing after beating the game just makes
+		you see The End text scene again and then sends you back to the main menu.
 	4) The shop does not do anything past the tutorial. You can still check it to see how
 		much money you have, but the money doesn't really matter (since you can't buy
 		anything).
