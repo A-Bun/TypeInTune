@@ -25,10 +25,14 @@ public class Tutorial : MonoBehaviour
 
     void Start()
     {
-        if(pi.GetTutorialStatus())
+        bossImage = personUI.transform.GetChild(0).gameObject;
+
+        if (pi.GetTutorialStatus())
         {
-            personUI.SetActive(false);
+            bossImage.SetActive(false);
             clockButton.onClick.AddListener(SaveToNextScene);
+            buyButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "SOLD";
+            buyButton.enabled = false;
             gameObject.GetComponent<Tutorial>().enabled = false;
         }
         else
@@ -36,7 +40,6 @@ public class Tutorial : MonoBehaviour
             typeTrack = letter.GetComponent<TypeTrackerV2>();
             letter.GetComponent<LetterInteract>().letter = tutLetter;
             textBox = personUI.transform.GetChild(1).gameObject;
-            bossImage = personUI.transform.GetChild(0).gameObject;
             orgPos = textBox.transform.position;
             blocker.SetActive(true);
             songbookButton.enabled = false;
@@ -46,7 +49,7 @@ public class Tutorial : MonoBehaviour
             clockButton.enabled = false;
             songbookPanel.transform.GetChild(2).gameObject.SetActive(false);
             shopPanel.transform.GetChild(1).gameObject.SetActive(false);
-            botMid = new Vector3(0f, -290f, 0f);
+            botMid = new Vector3(0f, -190f, 0f);
             StartCoroutine(WaitForDialogue(dialogues[0]));
         }
     }
@@ -239,7 +242,8 @@ public class Tutorial : MonoBehaviour
 
     public void EndFirstDay()
     {
-        pi.SetTutorialStatus(true);     //ISSUE: I need tutorial to stay marked as completed when done this way
+        pi.SetTutorialStatus(true);
+        tutLetter.song.owned = false;
         SaveToNextScene();
     }
 

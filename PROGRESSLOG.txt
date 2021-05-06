@@ -1,4 +1,20 @@
-﻿2021-05-04		Alexis Peoples		<alexisp30ples@gmail.com>
+﻿/******************************************************************************
+ * Author: Alexis Peoples
+ * Major: Computer Science: Software Development
+ * Due Date: May 6, 2021
+ * Course: CSC385-010
+ * Professor Name: Dr. Schwesinger
+ * Assignment: Semester Project
+ * Filename: PROGRESSLOG.txt
+******************************************************************************/
+
+2021-05-05		Alexis Peoples		<alexisp30ples@gmail.com>
+ * Now multiple letters (3, to be exact) can be typed per day (except during the tutorial/training day).
+ * All the letters have been added to the game.
+ * Now twinkle twinkle little star is a tutorial only song (since it is so short).
+ * An ending is now in the game. (  no spoilers (: )
+
+2021-05-04		Alexis Peoples		<alexisp30ples@gmail.com>
  * Almost finished the bar art for the intro/bar scene.
 	* The bar shelves are filled with bottles and glasses.
 	* There is a painting on the wall now, and the beginning of another painting.

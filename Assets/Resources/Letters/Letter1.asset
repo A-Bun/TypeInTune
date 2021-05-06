@@ -17,11 +17,11 @@ MonoBehaviour:
   - 'Dear Friend, '
   - 'I know it has been a while. '
   - 'I hope you are well. '
-  - "I\u2019m ready to start writing to you again. "
-  - "I\u2019m sorry it took so long, "
-  - "but I can\u2019t wait to catch up. "
-  - "I\u2019ll start with why I went on hiatus."
+  - 'I''m ready to start writing to you again. '
+  - 'I''m sorry it took so long, '
+  - 'but I can''t wait to catch up. '
+  - I'll start with why I went on hiatus.
   completedSentences: 00000000000000
   isComplete: 0
   paper: {fileID: 0}
-  song: {fileID: 11400000, guid: fc90a5130a138d24e9abef15c95d512e, type: 2}
+  song: {fileID: 11400000, guid: 504d514ef1983eb469909a0b25f6a598, type: 2}

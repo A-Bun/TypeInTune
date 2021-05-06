@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: SickDialogue
+  m_EditorClassIdentifier: 
+  speakerName: Me
+  sentences:
+  - I don't feel very good at the moment.
+  - I knew coming in today wasn't the best idea.
+  - Of course this happens today, just before my first two days off.
+  - I hope the boss doesn't mind me leaving early.
+  - Time to clock out and get some rest. Hopefully, I'll feel better by next week.
+  isComplete: 0

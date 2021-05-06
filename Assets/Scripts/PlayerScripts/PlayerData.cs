@@ -15,6 +15,7 @@ public class PlayerData
     public List<string> comLetters;
     public bool introCompleted;
     public bool tutorialCompleted;
+    public bool gameCompleted;
 
     public PlayerData(PlayerInfo player)
     {
@@ -30,5 +31,6 @@ public class PlayerData
         comLetters = player.comLetters;
         introCompleted = player.introCompleted;
         tutorialCompleted = player.tutorialCompleted;
+        gameCompleted = player.gameCompleted;
     }
 }

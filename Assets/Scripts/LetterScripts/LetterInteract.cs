@@ -24,12 +24,16 @@ public class LetterInteract : MonoBehaviour
 
         if (letter.title != "TutorialLetter")
         {
-            letter.song = null;
-            songIndex = Random.Range(0, songs.Count);
-            letter.song = songs[songIndex];
+            PickRandomSong();
+            while (letter.song.songTitle == "Twinkle Twinkle Little Star")
+            {
+                PickRandomSong();
+            }
         }
-
-        letter.song.interval = (int)letter.song.songDuration / letter.sentences.Count;
+        else
+        {
+            letter.song.interval = (int)letter.song.songDuration / letter.sentences.Count;
+        }
     }
     private void HideUnowned()
     {
@@ -42,6 +46,13 @@ public class LetterInteract : MonoBehaviour
         }
     }
 
+    public void PickRandomSong()
+    {
+        letter.song = null;
+        songIndex = Random.Range(0, songs.Count);
+        letter.song = songs[songIndex];
+        letter.song.interval = (int)letter.song.songDuration / letter.sentences.Count;
+    }
 
     // Update is called once per frame
     void Update()

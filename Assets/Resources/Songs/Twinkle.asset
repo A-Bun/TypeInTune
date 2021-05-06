@@ -16,11 +16,11 @@ MonoBehaviour:
   songArtist: Jane Taylor
   songAudio: {fileID: 8300000, guid: f58535dc737e31f4db825e746d5324b2, type: 3}
   songDuration: 22.413061
-  timesPlayed: 0
+  timesPlayed: 1
   songCost: 0
   totalMistakes: 0
-  totalMoney: 0
+  totalMoney: 5
   songSalary: 05000000
   salaryMarks: 
   owned: 1
-  interval: 7
+  interval: 2

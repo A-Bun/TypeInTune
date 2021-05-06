@@ -14,7 +14,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        if (player.fader.GetCurrentLevelIndex() == 0 || player.fader.GetCurrentLevelIndex() == 3)
+        if (player.fader.GetCurrentLevelIndex() == 0 || player.fader.GetCurrentLevelIndex() == 3 ||
+            player.fader.GetCurrentLevelIndex() == 4)
         {
             menu = true;
         }
@@ -117,6 +118,7 @@ public class PauseMenu : MonoBehaviour
             player.comLetters = data.comLetters;
             player.introCompleted = data.introCompleted;
             player.tutorialCompleted = data.tutorialCompleted;
+            player.gameCompleted = data.gameCompleted;
 
             player.LoadOwnedSongs();
             player.LoadOwnedPianos();
@@ -145,6 +147,7 @@ public class PauseMenu : MonoBehaviour
             player.comLetters = data.comLetters;
             player.introCompleted = data.introCompleted;
             player.tutorialCompleted = data.tutorialCompleted;
+            player.gameCompleted = data.gameCompleted;
 
             player.LoadOwnedSongs();
             player.LoadOwnedPianos();
@@ -162,14 +165,6 @@ public class PauseMenu : MonoBehaviour
         }
 
         Debug.Log("Loading Game from Menu...");
-    }
-
-    /* Settings
-     *   to be determined
-     */
-    public void Settings()
-    {
-        Debug.Log("Settings appear...");
     }
 
     /* Quit To Main Menu

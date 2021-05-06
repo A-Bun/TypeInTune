@@ -15,6 +15,7 @@ public class PlayerInfo : MonoBehaviour
     public List<string> comLetters;
     public bool introCompleted;
     public bool tutorialCompleted;
+    public bool gameCompleted;
     public Fader fader;
 
     private List<Song> allMusic;

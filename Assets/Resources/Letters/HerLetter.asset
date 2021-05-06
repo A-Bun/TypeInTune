@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145d29ae082963a49a2904175e3a747b, type: 3}
+  m_Name: HerLetter
+  m_EditorClassIdentifier: 
+  title: HerLetter
+  sentences:
+  - 'Dear Friend, '
+  - 'you don''t have to apologize to me. '
+  - 'You had to toil through rough months all by yourself. '
+  - 'I don''t blame you for dropping contact; '
+  - 'I probably would have done the same thing at one point or another. '
+  - 'Don''t ask me for forgiveness when you''ve done nothing wrong for me to forgive. '
+  - 'If anything I hope you can forgive me for not reaching out to you sooner and
+    more directly. '
+  - 'I just wish I had been there for you when you were going through so much. '
+  - 'I was hoping that you''d let me make up for it, starting now. '
+  - 'I''ll always love you too, Felix. '
+  - 'Until we meet again, '
+  - 'Evelyn  '
+  - P.S. Look up already.
+  completedSentences: 00000000000000000000000000
+  isComplete: 0
+  paper: {fileID: 0}
+  song: {fileID: 0}

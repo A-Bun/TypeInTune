@@ -87,6 +87,16 @@ public class PlayerInteract : MonoBehaviour
         player.tutorialCompleted = status;
     }
 
+    public bool GetGameStatus()
+    {
+        return player.gameCompleted;
+    }
+
+    public void SetGameStatus(bool status)
+    {
+        player.gameCompleted = status;
+    }
+
     public void ResetProgress()
     {
         SetDay(0);
@@ -102,6 +112,7 @@ public class PlayerInteract : MonoBehaviour
         player.ResetLetters();
         SetIntroStatus(false);
         SetTutorialStatus(false);
+        SetGameStatus(false);
 
         Debug.Log("Clearing Data...");
     }

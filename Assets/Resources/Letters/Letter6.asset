@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145d29ae082963a49a2904175e3a747b, type: 3}
+  m_Name: Letter6
+  m_EditorClassIdentifier: 
+  title: Letter6
+  sentences:
+  - 'Dear Friend, '
+  - 'one was the store manager, '
+  - 'and the other was another customer. '
+  - 'I thought I was in trouble for overstaying my welcome, '
+  - 'but the other customer started praising me. '
+  - 'He told me I was a natural '
+  - 'and asked if I worked as a pianist. '
+  - 'I thanked him for his kind words and told him no. '
+  - He looked surprised and asked me something I never expected.
+  completedSentences: 000000000000000000
+  isComplete: 0
+  paper: {fileID: 0}
+  song: {fileID: 0}

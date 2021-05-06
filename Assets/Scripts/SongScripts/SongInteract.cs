@@ -16,30 +16,19 @@ public class SongInteract : MonoBehaviour
 
     public GameObject blocker, songInfo, errorInfo;
     public PlayerInteract pi;
+    public bool newSong;
 
     // Start is called before the first frame update
     void Start()
     {
         blocker.SetActive(true);
         ttv2 = gameObject.GetComponent<TypeTrackerV2>();
-        song = ttv2.letIn.letter.song;
         audioS = GetComponent<AudioSource>();
-        audioS.clip = song.songAudio;
-        audioS.Stop();
-        salary = song.songSalary[0];
-        song.songDuration = song.songAudio.length;
-        currTime = 0;
-        index = 0;
-        //interval = (song.songDuration / ttv2.letIn.letter.interval);
-        interval = song.interval;
         waitToEnd = false;
+        newSong = false;
         ten = 10;
         sixty = 60;
-        songInfo.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = song.songTitle;
-        tempText = songInfo.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        songInfo.SetActive(true);
-        errorInfo.SetActive(true);
-        
+        Setup();
     }
 
     // Update is called once per frame
@@ -48,6 +37,11 @@ public class SongInteract : MonoBehaviour
         tutComp = ttv2.tutComplete;
         tutorial = ttv2.tut;
         blocker.SetActive(true);
+
+        if (newSong && audioS.time == 0)
+        {
+            Setup();
+        }
 
         if (tutComp)
         {
@@ -60,6 +54,24 @@ public class SongInteract : MonoBehaviour
         {
             EndSong();
         }
+    }
+
+    public void Setup()
+    {
+        song = ttv2.letIn.letter.song;
+        audioS.clip = song.songAudio;
+        audioS.Stop();
+        salary = song.songSalary[0];
+        song.songDuration = song.songAudio.length;
+        currTime = 0;
+        index = 0;
+        //interval = (song.songDuration / ttv2.letIn.letter.interval);
+        interval = song.interval;
+        songInfo.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = song.songTitle;
+        tempText = songInfo.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        songInfo.SetActive(true);
+        errorInfo.SetActive(true);
+        newSong = false;
     }
 
     public int NumMistakes()
@@ -102,14 +114,17 @@ public class SongInteract : MonoBehaviour
 
     public void Check()
     {
-        if (ttv2.letIn.letter.completedSentences[index] == true)
+        if (index < ttv2.letIn.letter.completedSentences.Count)
         {
-            ttv2.pause = true;
-            index++;
-            PlayClip();
-        }
+            if (ttv2.letIn.letter.completedSentences[index] == true)
+            {
+                ttv2.pause = true;
+                index++;
+                PlayClip();
+            }
 
-        PauseClip(false);
+            PauseClip(false);
+        }
     }
 
     public void PlayClip()
@@ -169,6 +184,7 @@ public class SongInteract : MonoBehaviour
             blocker.SetActive(false);
             songInfo.SetActive(false);
             errorInfo.SetActive(false);
+            index = 0;
             gameObject.SetActive(false);
         }
     }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145d29ae082963a49a2904175e3a747b, type: 3}
+  m_Name: Letter10
+  m_EditorClassIdentifier: 
+  title: Letter10
+  sentences:
+  - 'Dear Friend, '
+  - 'I''m sorry for not talking to you all this time. '
+  - 'These letters have really helped me cope. '
+  - 'I hope that one day you can forgive me '
+  - 'for the wasted time and write back. '
+  - 'I''ll always love you, my friend. '
+  - 'Until we meet again, '
+  - Felix
+  completedSentences: 0000000000000000
+  isComplete: 0
+  paper: {fileID: 0}
+  song: {fileID: 0}

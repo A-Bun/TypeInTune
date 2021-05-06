@@ -17,20 +17,14 @@ public class TypeTrackerV2 : MonoBehaviour
     private List<string> remainingWords = new List<string>();
     private List<string> fullLetter = new List<string>();
     private int sentenceIndex, charIndex;
+    private string currLetter;
 
 
     // Start is called before the first frame update
     void Start()
     {
         letIn = GetComponent<LetterInteract>();
-        pause = false;
-        wrong.gameObject.SetActive(false);
-        sentenceIndex = 0;
-        charIndex = 0;
-        numMistakes = 0;
-        originalLetter.richText = true;
-        fullLetter = letIn.letter.sentences;
-        SetCurrentWords();
+        Setup();
     }
 
     // Update is called once per frame
@@ -45,8 +39,29 @@ public class TypeTrackerV2 : MonoBehaviour
 
         if (!letIn.LetterStatus() && !pause)
         {
-            CheckInput();
+            if (letIn.letter.title != currLetter)
+            {
+                Setup();
+            }
+            else
+            {
+                CheckInput();
+            }
         }
+    }
+
+    private void Setup()
+    {
+        currLetter = letIn.letter.title;
+        originalLetter.text = "";
+        pause = false;
+        wrong.gameObject.SetActive(false);
+        sentenceIndex = 0;
+        charIndex = 0;
+        numMistakes = 0;
+        originalLetter.richText = true;
+        fullLetter = letIn.letter.sentences;
+        SetCurrentWords();
     }
 
     private void SetCurrentWords()

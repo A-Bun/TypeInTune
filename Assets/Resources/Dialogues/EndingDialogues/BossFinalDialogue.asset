@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36396bb477f530b4085a794274e71533, type: 3}
+  m_Name: BossFinalDialogue
+  m_EditorClassIdentifier: 
+  speakerName: Boss
+  sentences:
+  - Hey kid, I hope you're feelin' better.
+  - Don't worry about Friday; we all have bad days.
+  - 'By the way, someone asked me to give you this letter. '
+  - Be honest with me kid.
+  - Do I look like a mailman to you?
+  - 'The answer is: No, I don''t. Luckily for you, I''m a quick learner, hahaha.'
+  - Okay, enough jokes. I gotta go do boss things. Later kid.
+  isComplete: 0
